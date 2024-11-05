@@ -26,7 +26,7 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-# se windons
+No Windows, utilize:
 ```bash
 python -m venv venv
 .venv\Scripts\activate
