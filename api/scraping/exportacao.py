@@ -37,12 +37,13 @@ class Exportacao(Scraping):
             list_dicts_data = []
             for row in data_row[1:-1]:
                 list_dicts_data.append({
+                                    "Exportacao": tipo.text,
                                     headers[0]: row[0],
                                     headers[1]: row[1],
                                     headers[2]: row[2],
                                     'Ano': self.year
                                  })
 
-            data_ingest.append({tipo.text: list_dicts_data})
+            data_ingest.append(list_dicts_data)
 
         return data_ingest

@@ -37,12 +37,13 @@ class Importacao(Scraping):
             data_list = []
             for row in data_row[1:-1]:
                 data_list.append({
+                                    "Importacao": tipo.text,
                                     headers[0]: row[0],
                                     headers[1]: row[1],
                                     headers[2]: row[2],
                                     'Ano': self.year
                                   })
 
-            data_ingest.append({tipo.text: data_list})
+            data_ingest.append(data_list)
 
         return data_ingest

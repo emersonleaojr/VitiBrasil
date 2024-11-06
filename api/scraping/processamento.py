@@ -7,7 +7,7 @@ from api.scraping.scraping import Scraping
 
 class Processamento(Scraping):
 
-    def data_formatation(self, data_row, headers, ano):
+    def data_formatation(self, tipo, data_row, headers, ano):
         """
         Função ajustada para atender as necessidades da informação de processamento
 
@@ -21,6 +21,7 @@ class Processamento(Scraping):
             if row[0] in ["TINTAS", "BRANCAS E ROSADAS", "BRANCAS", "Sem classificação"]:
                 if item_key != None:
                     data.append({
+                                    "Processamento": tipo,
                                     headers[0]: item_key,
                                     headers[1]: item_value,
                                     'Subitem': list_subitem,
@@ -38,6 +39,7 @@ class Processamento(Scraping):
                                     })
 
         data.append({
+                        "Processamento": tipo,
                         headers[0]: item_key,
                         headers[1]: item_value,
                         'Subitem': list_subitem,
@@ -77,9 +79,9 @@ class Processamento(Scraping):
 
             data_row, headers = self.extract_rows_headers(rows, table)
 
-            data_list = self.data_formatation(data_row, headers, self.year)
+            data_list = self.data_formatation(tipo.text, data_row, headers, self.year)
 
-            data_ingest.append({tipo.text:data_list})
+            data_ingest.append(data_list)
 
 
         return data_ingest

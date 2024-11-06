@@ -40,7 +40,7 @@ def home():
                 <p>Para obter dados de importação: incluir /importacao/{ano desejado} ao fim do link da API.</p>
                 <p>Para obter dados de exportação: incluir /exportacao/{ano desejado} ao fim do link da API.</p>
                 <h2>Exemplo de Preenchimento:</h2>
-                <p>Preenchimento para ter dados de produção do ano de 1970, digite: http://127.0.0.1:5000/producao/1970.</p>
+                <p>Preenchimento para ter dados de produção do ano de 1970, digite: https://viti-brasil-api.vercel.app/producao/1970.</p>
             """
 
 @app.route("/producao/<int:year>", methods=["GET"])
