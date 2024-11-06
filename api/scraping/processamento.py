@@ -15,7 +15,6 @@ class Processamento(Scraping):
         :param headers: Nome dos campos de cada tabela
         :return: Retorna um json hierarquizado por classe, item e subitem, quando aplicável
         """
-
         data = []
         item_key = None
         for row in data_row[1:-1]:
@@ -54,7 +53,7 @@ class Processamento(Scraping):
         :return: Retorna json de dados referente ao processamento do ano informado na API
         """
 
-        data_ingest = {}
+        data_ingest = []
         url_complements = [
                             f"ano={self.year}&opcao=opt_03&subopcao=subopt_01",
                             f"ano={self.year}&opcao=opt_03&subopcao=subopt_02",
@@ -62,7 +61,6 @@ class Processamento(Scraping):
                             f"ano={self.year}&opcao=opt_03&subopcao=subopt_04"
                         ]
 
-        data = []
         for complement in url_complements:
             url_viniferas = self.url_base + complement
             response = requests.get(url_viniferas)
