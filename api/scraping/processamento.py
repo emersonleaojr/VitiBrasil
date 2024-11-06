@@ -2,12 +2,12 @@
 
 import requests
 from bs4 import BeautifulSoup
-from scraping.scraping import Scraping
+from api.scraping.scraping import Scraping
 
 
 class Processamento(Scraping):
 
-    def data_formatation(self, data_row, headers):
+    def data_formatation(self, data_row, headers, ano):
         """
         Função ajustada para atender as necessidades da informação de processamento
 
@@ -21,7 +21,12 @@ class Processamento(Scraping):
         for row in data_row[1:-1]:
             if row[0] in ["TINTAS", "BRANCAS E ROSADAS", "BRANCAS", "Sem classificação"]:
                 if item_key != None:
-                    data.append({item_key: list_subitem, headers[1]: item_value})
+                    data.append({
+                                    headers[0]: item_key,
+                                    headers[1]: item_value,
+                                    'Subitem': list_subitem,
+                                    'Ano': ano
+                                })
 
                 item_key = row[0]
                 item_value = row[1]
@@ -33,7 +38,12 @@ class Processamento(Scraping):
                                         headers[1]: row[1]
                                     })
 
-        data.append({headers[0]: item_key, headers[1]: item_value})
+        data.append({
+                        headers[0]: item_key,
+                        headers[1]: item_value,
+                        'Subitem': list_subitem,
+                        'Ano': ano
+                    })
 
         return data
 
@@ -69,11 +79,9 @@ class Processamento(Scraping):
 
             data_row, headers = self.extract_rows_headers(rows, table)
 
-            data_list = self.data_formatation(data_row, headers)
+            data_list = self.data_formatation(data_row, headers, self.year)
 
-            data.append({tipo.text:data_list})
+            data_ingest.append({tipo.text:data_list})
 
-        data_ingest['ano'] = self.year
-        data_ingest['processamento'] = data
 
         return data_ingest

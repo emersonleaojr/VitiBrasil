@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class Scraping:
     def __init__(self, url_base, year):
         """
@@ -30,7 +32,7 @@ class Scraping:
 
         return data_row, headers
 
-    def data_formatation(self, data_row, headers):
+    def data_formatation(self, data_row, headers, ano):
         """
         Formatação final do dicionário de saída dos módulos de scraping
 
@@ -43,7 +45,7 @@ class Scraping:
         for row in data_row[1:-1]:
             if row[0].isupper() or row[0] == "Sem classificação":
                 if item_key != None:
-                    data.append({item_key: list_subitem, headers[1]: item_value})
+                    data.append({headers[0]: item_key,headers[1]: item_value, 'Subitem': list_subitem, 'Ano': ano})
 
                 item_key = row[0]
                 item_value = row[1]
@@ -60,6 +62,6 @@ class Scraping:
                                         headers[1]: row[1]
                                     })
 
-        data.append({item_key: list_subitem, headers[1]: item_value})
+        data.append({headers[0]: item_key, headers[1]: item_value, 'Subitem': list_subitem, 'Ano': ano})
 
         return data

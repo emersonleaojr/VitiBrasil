@@ -1,6 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
-from scraping.scraping import Scraping
+from api.scraping.scraping import Scraping
 
 
 class Producao(Scraping):
@@ -19,11 +19,6 @@ class Producao(Scraping):
 
         data_row, headers = self.extract_rows_headers(rows, table)
 
-        data = self.data_formatation(data_row, headers)
-
-        data_ingest = {}
-
-        data_ingest['ano'] = self.year
-        data_ingest['producao'] = data
+        data_ingest = self.data_formatation(data_row, headers, self.year)
 
         return data_ingest
