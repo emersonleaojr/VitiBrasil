@@ -1,6 +1,6 @@
 # API - Vitibrasil Embrapa 
 
-Esse projeto foi desenvolvido para atender aos objetivos do Tech Challenge da Fase 1 da Pós Graduação em Machine Learning Engineering, turma 2MLET. 
+Esse projeto foi desenvolvido para atender aos objetivos do Tech Challenge da Fase 1 da Pós Graduação em Machine Learning Engineering, turma 3MLET. 
 
 ### Objetivo
 
