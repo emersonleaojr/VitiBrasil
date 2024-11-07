@@ -1,6 +1,6 @@
 # API - Vitibrasil Embrapa 
 
-Esse projeto foi desenvolvido para atender aos objetivos do Tech Challenge da Fase 1 da Pós Graduação em Machine Learning Engineering, turma 2MLET. 
+Esse projeto foi desenvolvido para atender aos objetivos do Tech Challenge da Fase 1 da Pós Graduação em Machine Learning Engineering, turma 3MLET. 
 
 ### Objetivo
 
@@ -64,19 +64,30 @@ Acesse a documentação da API no navegador: http://localhost:5000/apidocs ou ht
 
 ```bash
 VitiBrasil/
-├─ scraping/
-│  ├─ comercializacao.py
-│  ├─ exportacao.py
-│  ├─ importacao.py
-│  ├─ processamento.py
-│  ├─ producao.py
-│  ├─ scraping.py
+├─ .vercel/
+│  ├─ project.json
+│  ├─ README.txt
+├─ api/
+│  ├─ routes/
+│  │  ├─ routes.py
+│  ├─ scraping/
+│  │  ├─ comercializacao.py
+│  │  ├─ exportacao.py
+│  │  ├─ importacao.py
+│  │  ├─ procesamento.py
+│  │  ├─ producao.py
+│  │  ├─ scraping.py
+│  ├─ app.py
 ├─ .gitignore
-├─ main.py
 ├─ README.md
 ├─ requirements.txt
-├─ routes.py
+├─ vercel.json
+
 ```
+
+### Deploy no Vercel
+
+Para acessar o deploy no Vercel, clique [aqui](https://viti-brasil-api.vercel.app/).
 
 ## Contribuição
 
