@@ -17,41 +17,38 @@ A ideia do projeto é a criação de uma API pública de consulta nos dados do s
 ##  Configuração e Execução
 
 1.  Clone o repositório:
-```bash
+```
 https://github.com/emersonleaojr/VitiBrasil.git
 ```
 2.  Crie e ative o ambiente virtual:
-```bash
+```
 python3 -m venv venv
 source venv/bin/activate
 ```
 
 No Windows, utilize:
-```bash
+```
 python -m venv venv
 .venv\Scripts\activate
 ```
 3.  Instale as dependências:
-```bash
+```
 pip install -r requirements.txt
 ```
 
-5.  Executando a Aplicação Localmente:
-```bash
-python3 main.py
+5.  Executando a Aplicação Localmente (necessário instalar node.js):
+```
+npm i -g vercel
+vercel dev
 ```
 
-Ou no Windows:
-```bash
-python main.py
-```
-Acesse a documentação da API no navegador: http://localhost:5000/apidocs ou http://127.0.0.1:5000/apidocs
+Acesse a documentação da API no navegador: http://localhost:3000/apidocs.
 
 ### Pré-requisitos
 -   Python 3.12 ou superior
 -   Git
 -   Ambiente virtual Python
-
+-   Node.js
 
 ## Dependências
 - Flask
@@ -62,21 +59,31 @@ Acesse a documentação da API no navegador: http://localhost:5000/apidocs ou ht
 
 ## Estrutura atual do projeto
 
-```bash
+```
 VitiBrasil/
-├─ scraping/
-│  ├─ comercializacao.py
-│  ├─ exportacao.py
-│  ├─ importacao.py
-│  ├─ processamento.py
-│  ├─ producao.py
-│  ├─ scraping.py
+├─ .vercel/
+│  ├─ README.txt
+│  ├─ vercel.json
+├─ api/
+│  ├─ routes/
+│  │  ├─ routes.py
+│  ├─ scraping/
+│  │  ├─ comercializacao.py
+│  │  ├─ exportacao.py
+│  │  ├─ importacao.py
+│  │  ├─ processamento.py
+│  │  ├─ producao.py
+│  │  ├─ scraping.py
+│  ├─ app.py
 ├─ .gitignore
-├─ main.py
 ├─ README.md
 ├─ requirements.txt
-├─ routes.py
+├─ vercel.json
 ```
+
+### Deploy no Vercel
+
+Para acessar o deploy no Vercel, clique [aqui](https://viti-brasil.vercel.app/).
 
 ## Contribuição
 
