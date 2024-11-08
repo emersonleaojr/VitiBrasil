@@ -40,6 +40,12 @@ VitiBrasil/
 
 ##  Configuração e Execução
 
+### Pré-requisitos
+-   Python 3.12 ou superior
+-   Git
+-   Ambiente virtual Python
+-   Node.js
+
 1.  Clone o repositório:
 ```
 https://github.com/emersonleaojr/VitiBrasil.git
@@ -56,6 +62,12 @@ python -m venv venv
 venv\Scripts\activate
 ```
 3.  Instale as dependências:
+### Dependências
+- Flask
+- Flasgger
+- Requests
+- BeautifulSoup4
+  
 ```
 pip install -r requirements.txt
 ```
@@ -68,17 +80,6 @@ vercel dev
 
 Acesse a documentação da API no navegador: http://localhost:3000/apidocs.
 
-### Pré-requisitos
--   Python 3.12 ou superior
--   Git
--   Ambiente virtual Python
--   Node.js
-
-### Dependências
-- Flask
-- Flasgger
-- Requests
-- BeautifulSoup4
 
 ## Deploy no Vercel
 
