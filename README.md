@@ -14,49 +14,6 @@ A ideia do projeto é a criação de uma API pública de consulta nos dados do s
 -   /importação/{ano de interesse}
 -   /exportação/{ano de interesse}
 
-##  Configuração e Execução
-
-1.  Clone o repositório:
-```
-https://github.com/emersonleaojr/VitiBrasil.git
-```
-2.  Crie e ative o ambiente virtual:
-```
-python3 -m venv venv
-source venv/bin/activate
-```
-
-No Windows, utilize:
-```
-python -m venv venv
-.venv\Scripts\activate
-```
-3.  Instale as dependências:
-```
-pip install -r requirements.txt
-```
-
-5.  Executando a Aplicação Localmente (necessário instalar node.js):
-```
-npm i -g vercel
-vercel dev
-```
-
-Acesse a documentação da API no navegador: http://localhost:3000/apidocs.
-
-### Pré-requisitos
--   Python 3.12 ou superior
--   Git
--   Ambiente virtual Python
--   Node.js
-
-## Dependências
-- Flask
-- Flasgger
-- Requests
-- BeautifulSoup4
-
-
 ## Estrutura atual do projeto
 
 ```
@@ -81,9 +38,54 @@ VitiBrasil/
 ├─ vercel.json
 ```
 
-### Deploy no Vercel
+##  Configuração e Execução
+
+1.  Clone o repositório:
+```
+https://github.com/emersonleaojr/VitiBrasil.git
+```
+2.  Crie e ative o ambiente virtual:
+```
+python3 -m venv venv
+source venv/bin/activate
+```
+
+No Windows, utilize:
+```
+python -m venv venv
+venv\Scripts\activate
+```
+3.  Instale as dependências:
+```
+pip install -r requirements.txt
+```
+
+5.  Executando a Aplicação Localmente (necessário instalar node.js):
+```
+npm i -g vercel
+vercel dev
+```
+
+Acesse a documentação da API no navegador: http://localhost:3000/apidocs.
+
+### Pré-requisitos
+-   Python 3.12 ou superior
+-   Git
+-   Ambiente virtual Python
+-   Node.js
+
+### Dependências
+- Flask
+- Flasgger
+- Requests
+- BeautifulSoup4
+
+## Deploy no Vercel
 
 Para acessar o deploy no Vercel, clique [aqui](https://viti-brasil.vercel.app/).
+
+## Possível aplicação para modelagem
+![Fase_1_3MLET](https://github.com/user-attachments/assets/682cb513-1b90-45ed-a867-adaebcf5a925)
 
 ## Contribuição
 
@@ -92,3 +94,5 @@ Para acessar o deploy no Vercel, clique [aqui](https://viti-brasil.vercel.app/).
 3.  Faça commit das suas alterações (`git commit -m 'Add Feature'`).
 4.  Envie para a branch (`git push origin feature/SuaFeature`).
 5.  Abra um Pull Request.
+
+
